@@ -1,7 +1,7 @@
 
 
 pipeline {
-
+	agent any
 	
 	parameters {
         booleanParam(name: 'REDEPLOY', defaultValue: false)
