@@ -1,12 +1,7 @@
-@Library('jenkins-library@main')_
+
 
 pipeline {
-    agent {
-    	label 'agent-1'
-    }
-	tools {
-        oc 'oc'
-    }
+
 	
 	parameters {
         booleanParam(name: 'REDEPLOY', defaultValue: false)
