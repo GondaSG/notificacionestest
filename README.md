@@ -1,3 +1,3 @@
-# vuce-notificaciones-api-app
+# devops-notificaciones-api
 
-Proyecto para el API backend del proyecto de Notificaciones.
+Proyecto para archivos del despliegue del backend de Notificaciones.

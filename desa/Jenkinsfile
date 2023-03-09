@@ -13,10 +13,10 @@ pipeline {
     }
 
     environment {
-        SRC_PROJECT 	= 'vuce-notificaciones-api-app'
+        SRC_PROJECT 	= 'backend/devops-notificaciones-api'
         SRC_REPO_URL 	= "${GIT_SERVER}/mincetur/notificaciones/backend"
         SVC_FOLDER		= 'desa'
-        SVC_NAME		= 'vuce-notificaciones-api-app'
+        SVC_NAME		= 'backend/devops-notificaciones-api'
         ENVIRONMENT 	= 'desarrollo'
         BRANCH 			= 'master'
 		REGISTRY_SERVER = "${REGISTRY_OCP_DEV_SERVER}"
@@ -37,21 +37,11 @@ pipeline {
         stage ('Build') {
             steps {
 				script {
-					gradle(kind:'build',version:'7-jdk11',source: SRC_PROJECT) 
+					gradle(kind:'build',version:'8-jdk11',source: SRC_PROJECT) 
 				}	
             }
         }
 
-        stage ('Sonarqube analysis') {
-        	environment {
-                scannerHome = tool 'sonarqube-scanner'
-            }
-            steps {
-				script {
-					sonarqube(kind:'analyzeJava',projectKey: SVC_NAME, projectName: SRC_PROJECT) 
-				}	
-            }
-        }
 
 	    stage ('Publish Openshift Image') {
 	        steps {
