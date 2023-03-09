@@ -13,10 +13,10 @@ pipeline {
     }
 
     environment {
-        SRC_PROJECT 	= 'backend/devops-notificaciones-api'
-        SRC_REPO_URL 	= "${GIT_SERVER}/mincetur/notificaciones/backend"
+        SRC_PROJECT 	= 'notificacionestest'
+        SRC_REPO_URL 	= "${GIT_SERVER}/GondaSG/"
         SVC_FOLDER		= 'desa'
-        SVC_NAME		= 'backend/devops-notificaciones-api'
+        SVC_NAME		= 'notificacionestest'
         ENVIRONMENT 	= 'desarrollo'
         BRANCH 			= 'master'
 		REGISTRY_SERVER = "${REGISTRY_OCP_DEV_SERVER}"
