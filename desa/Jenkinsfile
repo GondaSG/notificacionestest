@@ -2,9 +2,7 @@
 
 pipeline {
     agent any
-	tools {
-        oc 'oc'
-    }
+
 	
 	parameters {
         booleanParam(name: 'REDEPLOY', defaultValue: false)
