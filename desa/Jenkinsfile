@@ -1,9 +1,7 @@
 @Library('jenkins-library@master')_
 
 pipeline {
-    agent {
-    	label 'agent-1'
-    }
+    agent any
 	tools {
         oc 'oc'
     }
